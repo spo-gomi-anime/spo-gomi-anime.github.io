@@ -590,6 +590,10 @@ padding-top: calc(100vw * 40 / 375);
 }
 
 @media only screen and (min-width: 769px) {
+  .l-introduction {
+    margin-top: calc(100vw * -100 / 1366);
+    padding-top: calc(100vw * 100 / 1366);
+  }
 
   .l-introduction-ss img {
     width: 50%;
