@@ -471,8 +471,6 @@ padding-top: calc(100vw * 40 / 375);
  .l-keyvisual-img {
    position: relative;
    display: block;
-   width: 110%;
-   margin-left: calc(100vw * -20 / 375);
    z-index: 2;
  }
 
