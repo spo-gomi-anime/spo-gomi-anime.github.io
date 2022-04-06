@@ -182,7 +182,8 @@ a:hover {
     color: #000;
     transform: var(--transform-shear);
   }
-  .c-btn-text {
+  .c-btn-text,
+  .c-btn-text-small {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -196,6 +197,10 @@ a:hover {
     background: url("../images/icon_arrow.svg") no-repeat;
   }
 
+  .c-btn.is-small {
+    padding: calc(100vw * 10 / 365) 0;
+  }
+
   @media only screen and (min-width: 769px) {
     .c-btn {
       max-width: calc(100vw * 668 / 1366);
@@ -207,6 +212,10 @@ a:hover {
       width: calc(100vw * 58 / 1366);
       height: calc(100vw * 9 / 1366);
       background-size: calc(100vw * 58 / 1366);
+    }
+
+    .c-btn.is-small {
+      padding: calc(100vw * 10 / 1366) 0;
     }
   }
 
@@ -813,6 +822,28 @@ padding-top: calc(100vw * 40 / 375);
     width: calc(100vw * 355 / 1366);
   }
    
+ }
+
+  /* ------------------------------------------------------------------- 
+ * ## Streaming Section
+ * ------------------------------------------------------------------- */
+
+ .l-streaming-list {
+   display: flex;
+   flex-wrap: wrap;
+   margin-top: 5em;
+ }
+
+ .l-streaming-list-item {
+   width: 43%;
+   margin-bottom: 1em;
+   font-size: var(--fontsize-text-small);
+ }
+
+ @media only screen and (min-width: 769px) {
+  .l-streaming-list-item {
+    width: 24%;
+  }
  }
 
   /* ------------------------------------------------------------------- 
