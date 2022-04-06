@@ -189,6 +189,10 @@ a:hover {
     justify-content: center;
   }
 
+  .c-btn-text-small {
+    text-align: center;
+  }
+
   .c-btn-text:after {
     content:"";
     width: calc(100vw * 58 / 365);
@@ -198,6 +202,9 @@ a:hover {
   }
 
   .c-btn.is-small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: calc(100vw * 10 / 365) 0;
   }
 
