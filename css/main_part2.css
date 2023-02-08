@@ -721,19 +721,6 @@ padding-top: calc(100vw * 40 / 375);
   margin-left: 0.4em;
 }
 
-@media only screen and (min-width: 1240px) {
-  .l-chara-info  {
-    max-width: 31.875em;
-  }
-}
-
-@media only screen and (min-width: 1120px) {
-  .l-chara-info {
-    max-width: 22.875em;
-  }
-
-}
-
 @media only screen and (min-width: 921px) {
   .l-chara-item img {
     max-width: 15.625em;
@@ -741,6 +728,18 @@ padding-top: calc(100vw * 40 / 375);
 
   .l-chara-info {
     max-width: 18.875em;
+  }
+}
+
+@media only screen and (min-width: 1120px) {
+  .l-chara-info {
+    max-width: 22.875em;
+  }
+}
+
+@media only screen and (min-width: 1240px) {
+  .l-chara-info  {
+    max-width: 31.875em;
   }
 }
 
