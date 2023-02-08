@@ -907,6 +907,7 @@ padding-top: calc(100vw * 40 / 375);
 .l-streaming-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .l-streaming-list-item {
