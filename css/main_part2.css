@@ -195,30 +195,39 @@ a:hover {
   color: var(--text-color);
  }
 
-  .c-text+.c-text {
+  .c-text+.c-text,
+  .c-text-small+.c-text-small {
     margin-top: 1em;
   }
 
   .is-underline {
     border-bottom: 2px dashed var(--theme-color);
+  }
 
+  .c-text-small {
+    font-size: var(--fontsize-text-small);
   }
 
   /* Button -----------*/
 
-  .c-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1em 0.2em;
-    text-align: center;
-    background: var(--text-color);
-    color: #FFF;
-    font-size: var(--fontsize-text-small);
-    font-weight: bold;
-    border-radius: 0.6em;
-    transition: var(--transition);
-  }
+.c-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0.2em;
+  text-align: center;
+  background: var(--text-color);
+  color: #FFF;
+  font-size: var(--fontsize-text-small);
+  font-weight: bold;
+  border-radius: 0.6em;
+  transition: var(--transition);
+}
+
+.l-button-wrapp {
+  display: flex;
+  justify-content: center;
+}
 
 /* -------------------------------------------------------------------
  * ## loding animation
@@ -470,7 +479,7 @@ padding-top: calc(100vw * 40 / 375);
   flex-direction: column;
   justify-content: space-between;
   height: calc(100% - 73px);
-  padding: 1em 2em;
+  padding: 1em;
  }
 
  .l-aside-logo {
@@ -591,6 +600,28 @@ padding-top: calc(100vw * 40 / 375);
     margin: 0;
   }
 }
+
+.l-kv-logo {
+  position: absolute;
+  top: 0;
+  width: 32vw;
+  background: #fff;
+  padding: 1.6vw;
+}
+
+ @media only screen and (max-width: 768px) {
+  .l-kv-logo {
+    left: 0;
+  }
+ }
+
+ @media only screen and (min-width: 769px) {
+  .l-kv-logo {
+    right: 0;
+    width: 20vw;
+    padding: 1vw;
+  }
+ }
 
 /* -------------------------------------------------------------------
  * ## Introduction
