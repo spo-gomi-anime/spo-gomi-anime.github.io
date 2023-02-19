@@ -611,7 +611,7 @@ padding-top: calc(100vw * 40 / 375);
 
  @media only screen and (max-width: 768px) {
   .l-kv-logo {
-    left: 0;
+    display: none;
   }
  }
 
