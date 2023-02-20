@@ -466,6 +466,10 @@ padding-top: calc(100vw * 40 / 375);
   }
 }
 
+.drawernav-content .l-aside-banner {
+  margin-top: 3em;
+}
+
 /* -------------------------------------------------------------------
  * ##  Side Menu
  * ------------------------------------------------------------------- */
@@ -522,6 +526,7 @@ padding-top: calc(100vw * 40 / 375);
 
  .l-aside-banner {
   margin-bottom: 0.6em;
+  text-align: center;
  }
 
  .l-aside-banner-text {

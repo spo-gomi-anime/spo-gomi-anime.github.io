@@ -880,6 +880,14 @@ padding-top: calc(100vw * 40 / 375);
    text-align: center;
  }
 
+ .l-footer-bn {
+  margin-bottom: 6em;
+  text-align: center;
+ }
+ .l-footer-bn img {
+  max-width: 320px;
+ }
+
 /* ------------------------------------------------------------------- 
  * ## Helpful
  * ------------------------------------------------------------------- */
