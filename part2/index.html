@@ -1,52 +1,701 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Password</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="padlock.svg" type="image/svg+xml">
-    <script type="text/javascript" src="sha256.js"></script>
-  </head>
-  <body>
-    <form id="form">
-      <p id="message">Please enter your password.</p>
-      <input type="password" placeholder="password" id="password">
-    </form>
-    <script>
-      function hash(text) {
-        const sha = new jsSHA('SHA-256', 'TEXT');
-        sha.update(text);
-        return sha.getHash('HEX');
-      }
-      function auth(password) {
-        const url = hash(password);
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', url);
-        xhr.send();
-        xhr.onload = function () {
-          if (xhr.readyState === 4 && xhr.status === 200) {
-            window.location = url;
-          } else {
-            const message = document.getElementById('message');
-            const input = document.getElementById('password');
-            message.innerHTML = 'Wrong password! Try again.';
-            input.value = '';
-          }
-        };
-        xhr.onerror = function () {
-          const message = document.getElementById('message');
-          message.innerHTML = 'Sorry, ERROR !';
-        };
-      }
-      const form = document.getElementById('form');
-      form.addEventListener('submit', function (event) {
-        const password = document.getElementById('password').value;
-        auth(password);
-        event.preventDefault();
-      });
-    </script>
-  </body>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>アニメ「スポGOMI まちの絆づくり編」　公式サイト</title>
+<meta name="description" content="日本財団 海と日本プロジェクトの一環で制作された本作品。トキオ役に、人気俳優の柄本時生を起用。スポGOMI待望の第2弾アニメです。">
+<meta property="og:site_name" content="アニメ「スポGOMI まちの絆づくり編」">
+<meta property="og:title" content="スポGOMI まちの絆づくり編　公式サイト">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://spo-gomi-anime.uminohi.jp/part2.html">
+<meta property="og:image" content="../../images/part2/ogp.jpg">
+<meta property="fb:app_id" content="">
+<meta name="twitter:card" content="">
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="スポGOMI まちの絆づくり編　公式サイト">
+<meta name="twitter:description" content="日本財団 海と日本プロジェクトの一環で制作された本作品。トキオ役に、人気俳優の柄本時生を起用。スポGOMI待望の第2弾アニメです。">
+<meta name="twitter:image" content="../../images/part2/ogp.jpg">
+
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../lib/swiper/css/swiper-bundle.min.css">
+<link rel="stylesheet" href="../../css/main_part2.css">
+
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/png" href="../../images/favicons/favicon.ico">
+<link rel="apple-touch-icon" type="image/png" href="/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/icon-192x192.png">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-221753921-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-221753921-1');
+</script>
+
+</head>
+
+<body class="bg-img">
+  <section class="wrap js-wrap">
+
+    <div class="l-sicebar">
+      <aside class="l-aside">
+        <div class="l-aside-nav-pc">
+          <div class="l-aside-nav">
+            <h1 class="l-aside-logo">
+              <a href="#">
+                <img src="../../images/part2/logo-part2.png" alt="スポGOMI まちの絆づくり編" class="aside-logo">
+              </a>
+            </h1>
+            <nav>
+              <ul class="c-aside-nav">
+                <li class="c-aside-nav-item"><a href="#top" id="top_link_js" title="top">Top</a></li>
+                <li class="c-aside-nav-item"><a href="#introduction" id="introduction_link_js" title="introduction">Introduction</a></li>
+                <li class="c-aside-nav-item"><a href="#characters" id="characters_link_js" title="characters">Characters</a></li>
+                <li class="c-aside-nav-item"><a href="#staff" id="staff_link_js" title="cast/staff">Cast / Staff</a></li>
+                <!-- <li class="c-aside-nav-item"><a href="#streaming" id="streaming_link_js" title="streaming">Streaming</a></li> -->
+              </ul>
+            </nav>
+          </div>
+          <div class="l-aside-links">
+            <div class="l-aside-banner">
+              <a href="/" onclick="gtag('event', 'click', {'event_category': 'link','event_label': 'banner_part1-aside','value': '1'});">
+      
+                <img src="../../images/part2/img_spogomi1.png" alt="スポGOMI ワールドカップ エキシビジョンマッチ編">
+              </a>
+            </div>
+            <div class="l-aside-logo-nihonzaidan">
+              <a href="https://uminohi.jp/" target="_blank" onclick="gtag('event', 'click', {'event_category': 'link','event_label': 'logo_zaidan_aside','value': '1'});">
+                <img src="../../images/logo_umipro_vertical.svg" alt="日本財団 海と日本プロジェクト">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="l-aside-share">
+          <p class="l-aside-share-txt">Share</p>
+          <div class="l-aside-share-icon-wrap">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://spo-gomi-anime.uminohi.jp/part2/" target="_blank" onclick="gtag('event', 'click', {'event_category': 'link','event_label': 'share_facebook','value': '1'});">
+              <img src="../../images/part2/icn_facebook.svg" alt="Facebook">
+            </a>
+            <a href="http://twitter.com/share?url=https://spo-gomi-anime.uminohi.jp/part2/&text=&hashtags=" target="_blank" onclick="gtag('event', 'click', {'event_category': 'link','event_label': 'share_twitter','value': '1'});">
+              <img src="../../images/part2/icn_twitter.svg" alt="Twitter">
+            </a>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+
+    <main class="l-main">
+      <div class="l-main-inner">
+        <div class="l-kv-logo">
+          <img src="../../images/logo_umipro_vertical.svg" alt="日本財団 海と日本プロジェクト">
+        </div>
+        <section class="l-kv position-now" id="top">
+          <figure>
+            <img src="../../images/part2/kv.jpg" alt="スポGOMI まちの絆づくり編 キービジュアル">
+          </figure>
+        </section>
+        <section class="position-now" id="introduction">
+          <h2 class="c-headline">Introduction</h2>
+          <div class="l-ss-swiper">
+            <!-- Slider main container -->
+            <div class="swiper js-swiper-ss2">
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="../../images/part2/img_ss1.png" alt=""></div>
+                <div class="swiper-slide"><img src="../../images/part2/img_ss2.png" alt=""></div>
+                <div class="swiper-slide"><img src="../../images/part2/img_ss3.png" alt=""></div>
+                <div class="swiper-slide"><img src="../../images/part2/img_ss4.png" alt=""></div>
+                <div class="swiper-slide"><img src="../../images/part2/img_ss5.png" alt=""></div>
+              </div>
+              <div class="swiper-button-prev is-pc-show"></div>
+              <div class="swiper-button-next is-pc-show"></div>
+            </div>
+            <div class="swiper js-swiper-ss">
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="../../images/part2/img_ss1.png" alt=""></div>
+                <div class="swiper-slide"><img src="../../images/part2/img_ss2.png" alt=""></div>
+                <div class="swiper-slide"><img src="../../images/part2/img_ss3.png" alt=""></div>
+                <div class="swiper-slide"><img src="../../images/part2/img_ss4.png" alt=""></div>
+                <div class="swiper-slide"><img src="../../images/part2/img_ss5.png" alt=""></div>
+              </div>
+            </div>
+          </div>
+          <div class="l-introduction-text">
+            <p class="c-text">
+              <span class="is-underline">
+                スポGOMIエキシビションマッチから数年後。世界での人気の高まりに比して、日本でのスポGOMIの認知度は未だ不十分であった。アカリとトキオはスポGOMI開催経験のない地域を訪れては、実技をレクチャーしながら、全国のスポGOMI拠点化を指導していた。そんな中、日本のとある街の、その街の人々の暮らしを守り支える河川「大川」、その大川周辺でスポGOMIのワールドカップ開催が決定される。しかし、その上流と下流に位置する北大川市と南大川市は犬猿の仲、どちらを開催地にするかで争論を始めてしまう。そこでトキオはワールドカップ開催をかけたプレマッチの提案するのだが。
+              </span>
+            </p>
+          </div>
+        </section>
+
+        <section class="position-now" id="characters">
+          <h2 class="c-headline">Characters</h2>
+          <div class="l-characters-swiper">
+            <!-- Slider main container -->
+            <div class="swiper js-chara-ss2">
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <div class="l-chara-item">
+                    <figure>
+                      <img src="../../images/part2/img_chara1.png" alt="トキオ">
+                    </figure>
+                    <div class="l-chara-info">
+                      <p class="l-chara-name">トキオ</p>
+                      <p class="l-chara-cv">
+                        <span class="l-chara-cv-tag">CV</span>
+                        <span class="l-chara-cv-name">柄本時生</span>
+                      </p>
+                      <p class="c-text">
+                        世界中からは「トーキョーキッド」の愛称で親しまれるスポGOMI日本代表のエース。各国のスポGOMI代表選手とのネットワークを有し、世界各地で、スポGOMIを広げるため、世界ランカーを招集したワールドエキシビションマッチを開催し、海洋ごみ問題を呼びかけている。日本国内のスポGOMI人口を増やすため、アカリと共に、国内拠点づくりの行脚を行っている。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="l-chara-item">
+                    <figure>
+                      <img src="../../images/part2/img_chara2.png" alt="アカリ">
+                    </figure>
+                    <div class="l-chara-info">
+                      <p class="l-chara-name">アカリ</p>
+                      <p class="l-chara-cv">
+                        <span class="l-chara-cv-tag">CV</span>
+                        <span class="l-chara-cv-name">照井春佳</span>
+                      </p>
+                      <p class="c-text">
+                        ポGOMIワールドエキシビションマッチ後、大学に進学。<br>
+                        大学でも環境社会学を専攻し、ごみ拾い活動を組織化、事業化するための社会システム構築について研究している。その研究の一環として、スポGOMIを広げるため、全国各地での拠点づくりを、トキオと共に推進している。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="l-chara-item">
+                    <figure>
+                      <img src="../../images/part2/img_chara3.png" alt="ユート">
+                    </figure>
+                    <div class="l-chara-info">
+                      <p class="l-chara-name">ユート</p>
+                      <p class="l-chara-cv">
+                        <span class="l-chara-cv-tag">CV</span>
+                        <span class="l-chara-cv-name">菅沼久義</span>
+                      </p>
+                      <p class="c-text">
+                        南大川市の市長の息子。メイとは幼馴染。もともと、メイとユートの父親同士は、高校野球部のチームメイトで、親友同士。それがきっかけでメイとは子どもの頃から親しくしており、メイに密かに恋心を寄せる。しかし、いつも皆から羨望の的となるメイになかなか自分の想いを伝えることができずにいる。そういう自分を少しでも変えたいと思っている。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="l-chara-item">
+                    <figure>
+                      <img src="../../images/part2/img_chara4.png" alt="メイ">
+                    </figure>
+                    <div class="l-chara-info">
+                      <p class="l-chara-name">メイ</p>
+                      <p class="l-chara-cv">
+                        <span class="l-chara-cv-tag">CV</span>
+                        <span class="l-chara-cv-name">厚地彩花</span>
+                      </p>
+                      <p class="c-text">
+                        曲がったことが嫌いで、理不尽なこと、不道徳なことに、強い正義感を抱く、猪突猛進気味な女の子。市長である父が、隣の南大川市を敵対視することに強い違和感を覚え、よく口論になる。基本的には明るい性格で、屈託のない笑顔で笑う姿から友達も多く、学校の中でも中心的な存在として、リーダーシップを発揮する才媛。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="l-chara-item">
+                    <figure>
+                      <img src="../../images/part2/img_chara5.png" alt="カイト">
+                    </figure>
+                    <div class="l-chara-info">
+                      <p class="l-chara-name">カイト</p>
+                      <p class="l-chara-cv">
+                        <span class="l-chara-cv-tag">CV</span>
+                        <span class="l-chara-cv-name">三野雄大</span>
+                      </p>
+                      <p class="c-text">
+                        ユートの同級生で、スポGOMI南校チームのチームメイト。<br>
+                        運動神経がよく活発な男子。好奇心旺盛で些事にはこだわらない性格。とにかく面白ければいいというような考え方を持っていて、少し天然気味のユートとは馬が合う。ムサシから伝授された技をマスターしようとユートと共に練習を重ねる。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="l-chara-item">
+                    <figure>
+                      <img src="../../images/part2/img_chara6.png" alt="レナ">
+                    </figure>
+                    <div class="l-chara-info">
+                      <p class="l-chara-name">レナ</p>
+                      <p class="l-chara-cv">
+                        <span class="l-chara-cv-tag">CV</span>
+                        <span class="l-chara-cv-name">劉セイラ</span>
+                      </p>
+                      <p class="c-text">
+                        メイの同級生で、スポGOMI北高チームのチームメイト。<br>
+                        容姿や言葉遣いはバリバリのギャルですぐに無理と言ったり軽い不満を連発するが、あれこれ言いながらもきちんと最後までやり抜く性格。根は中途半端なことが嫌いで責任感がある為、一見タイプが違うようにみえるメイとはとても気が合う親友。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="l-chara-item">
+                    <figure>
+                      <img src="../../images/part2/img_chara7.png" alt="北大川市長">
+                    </figure>
+                    <div class="l-chara-info">
+                      <p class="l-chara-name">北大川市長</p>
+                      <p class="l-chara-cv">
+                        <span class="l-chara-cv-tag">CV</span>
+                        <span class="l-chara-cv-name">蟹江俊介</span>
+                      </p>
+                      <p class="c-text">
+                        メイの父親。おてんば娘のメイに手を焼いている。メイから正論をぶつけられると、たじたじとなり、どなり散らすしかなくなるため、娘との仲があまりよくないが、本当は娘のことを大事に思っている。南大川市の市長とは昔、飲んだ席で、高校時代のお互いの試合での落ち度を非難し合い、以来、犬猿の仲に。さらに、北大川市が、大川の上流に位置しているため、南大川市よりも田舎という点で引け目に感じており、上流から下流に流れるごみについて、殆どみて見ぬふりをしている。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="l-chara-item">
+                    <figure>
+                      <img src="../../images/part2/img_chara8.png" alt="南大川市長">
+                    </figure>
+                    <div class="l-chara-info">
+                      <p class="l-chara-name">南大川市長</p>
+                      <p class="l-chara-cv">
+                        <span class="l-chara-cv-tag">CV</span>
+                        <span class="l-chara-cv-name">ボルケーノ太田</span>
+                      </p>
+                      <p class="c-text">
+                        ユートの父親。大川市が南北に分かれる前の大川高校で、野球部のピッチャーを務め、北大川市長とはバッテリーを組む、親友同士の仲だった。ユートには、自分の後継者になってもらいたいと思い、厳しくあたる。ユートには、それがプレッシャーとなり、父と子の関係はギクシャクして上手くいっていない。北大川市の市長とは仲が悪く、川のごみ問題を上流エリアの北大川市のせいにし、都市化に集中し、川から海にごみが流れている現実を無視している。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="l-chara-item">
+                    <figure>
+                      <img src="../../images/part2/img_chara9.png" alt="ムサシ">
+                    </figure>
+                    <div class="l-chara-info">
+                      <p class="l-chara-name">ムサシ</p>
+                      <p class="l-chara-cv">
+                        <span class="l-chara-cv-tag">CV</span>
+                        <span class="l-chara-cv-name">松風雅也</span>
+                      </p>
+                      <p class="c-text">
+                        着物姿に刀を差し、長髪を後ろで結んでいる、武者修行中の侍のような風貌。背中に２本の長剣のようなトングを差すことから、二刀流のムサシと呼ばれるが、本名も年齢も不詳。日本中のゴミのある場所に現れては、ゴミを拾っては姿を消す謎の人物。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+            <div class="swiper js-chara-ss is-pc-show">
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><span class="chara1"></span></div>
+                <div class="swiper-slide"><span class="chara2"></span></div>
+                <div class="swiper-slide"><span class="chara3"></span></div>
+                <div class="swiper-slide"><span class="chara4"></span></div>
+                <div class="swiper-slide"><span class="chara5"></span></div>
+                <div class="swiper-slide"><span class="chara6"></span></div>
+                <div class="swiper-slide"><span class="chara7"></span></div>
+                <div class="swiper-slide"><span class="chara8"></span></div>
+                <div class="swiper-slide"><span class="chara9"></span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="position-now" id="staff">
+          <h2 class="c-headline">Cast / Staff</h2>
+          <div class="l-staff-contents">
+            <h3 class="c-contents-title"><span>Cast</span></h3>
+            <div class="l-cast-flex">
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">トキオ</p>
+                <p class="c-staff-name">柄本 時生</p>
+              </div>
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">アカリ</p>
+                <p class="c-staff-name">照井 春佳</p>
+              </div>
+
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">ユート</p>
+                <p class="c-staff-name">菅沼 久義</p>
+              </div>
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">メイ</p>
+                <p class="c-staff-name">厚地 彩花</p>
+              </div>
+
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">カイト</p>
+                <p class="c-staff-name">三野 雄大</p>
+              </div>
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">レナ</p>
+                <p class="c-staff-name">劉 セイラ</p>
+              </div>
+
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">北大川市長</p>
+                <p class="c-staff-name">蟹江 俊介</p>
+              </div>
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">南大川市長</p>
+                <p class="c-staff-name">ボルケーノ 太田</p>
+              </div>
+
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">カップルの男</p>
+                <p class="c-staff-name">小池 聖人</p>
+              </div>
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">カップルの女</p>
+                <p class="c-staff-name">遠藤 瑠香</p>
+              </div>
+
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">日本財団司会進行</p>
+                <p class="c-staff-name">清水 健佑</p>
+              </div>
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">アナウンサー</p>
+                <p class="c-staff-name">山本 悠有希</p>
+              </div>
+
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">大会司会者</p>
+                <p class="c-staff-name">宮園 拓夢</p>
+              </div>
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">ムサシ</p>
+                <p class="c-staff-name">松風 雅也</p>
+              </div>
+
+              <div class="l-cast-flex-item">
+                <p class="c-staff-role">日本財団会長</p>
+                <p class="c-staff-name">笹川 陽平</p>
+              </div>
+            </div>
+            <h3 class="c-contents-title"><span>Staff</span></h3>
+            <div class="l-staff-flex">
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">監督</p>
+                <p class="c-staff-name">沼田 心之介</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">脚本</p>
+                <p class="c-staff-name">神尾 香菜子</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">キャラクターデザイン</p>
+                <p class="c-staff-name">古村 静香</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">絵コンテ</p>
+                <p class="c-staff-name">樋口 雅一</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">演出助手</p>
+                <p class="c-staff-name">雄谷 将仁</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">演出</p>
+                <p class="c-staff-name">水野 知己</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">作画監督</p>
+                <p class="c-staff-name">Park Gun-Ha</p>
+              </div>
+            </div>
+            <div class="l-staff-flex">
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">原画</p>
+                <p class="c-staff-name">（CJT）</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-name">Jeoung Gyu-Tak</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-name">Jeoung Gyu-Tak</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-name">Kim Hyun-Gyung</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-name">Min Ho-Jung</p>
+              </div>
+            </div>
+            <div class="l-staff-flex">
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">編集</p>
+                <p class="c-staff-name">中葉 由美子</p>
+                <p class="c-staff-role">（岡安プロモーション）</p>
+              </div>
+            </div>
+            <div class="l-staff-flex">
+              <div class="l-staff-flex-item-50">
+                <p class="c-staff-role">エンディングテーマ</p>
+                <p class="c-staff-name">「Fly Away」（vo.劉セイラ）</p>
+                <p class="c-staff-role">作詞・作曲：波房 克典    編曲：宮﨑 雨水男</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-name">storytller</p>
+              </div>
+            </div>
+            <div class="l-staff-flex">
+              <div class="l-staff-flex-item-50">
+                <p class="c-staff-role">音響制作</p>
+                <p class="c-staff-name">青二プロダクション</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-name">池田 克明</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-name">池沢 勝斗</p>
+              </div>
+            </div>
+            <div class="l-staff-flex">
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">音響監督</p>
+                <p class="c-staff-name">阿部 信行</p>
+                <p class="c-staff-role">（オンリード）</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-name">藤本 たかひろ</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-name">三谷 佳奈美</p>
+              </div>
+            </div>
+            <div class="l-staff-flex">
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">スタジオ</p>
+                <p class="c-staff-name">AION studio</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">音響効果</p>
+                <p class="c-staff-name">庄司 雅弘</p>
+              </div>
+            </div>
+            <div class="l-staff-flex">
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">ゼネラルプロデューサー</p>
+                <p class="c-staff-name">沼田 かずみ</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">アニメーション制作</p>
+                <p class="c-staff-name">トマソン</p>
+              </div>
+              <div class="l-staff-flex-item-50">
+                <p class="c-staff-role">制作協力</p>
+                <p class="c-staff-name">ピーターパン・クリエイション</p>
+              </div>
+            </div>
+            <div class="l-staff-flex">
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">アニメーションプロデューサー</p>
+                <p class="c-staff-name">沼田 友之介</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">制作デスク</p>
+                <p class="c-staff-name">河野 創太</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">制作進行</p>
+                <p class="c-staff-name">高橋 奉宏</p>
+              </div>
+            </div>
+            <div class="l-staff-flex">
+              <div class="l-staff-flex-item-100">
+                <p class="c-staff-role">企画</p>
+                <p class="c-staff-name">日本財団「海と日本プロジェクト」</p>
+              </div>
+            </div>
+
+            <div class="l-staff-flex">
+              <div class="l-staff-flex-item">
+                <p class="c-staff-role">プロデューサー</p>
+                <p class="c-staff-name">波房 克典</p>
+                <p class="c-staff-role">（ワールドエッグス）</p>
+              </div>
+              <div class="l-staff-flex-item">
+                <p class="c-staff-name">岡村 哲也</p>
+                <p class="c-staff-role">（MyAnimeList）</p>
+              </div>
+            </div>
+
+        </section>
+<!-- 
+        <section class="position-now" id="streaming">
+          <h2 class="c-headline">Streaming</h2>
+          <div class="is-center mb-2">
+            <p class="c-text">
+              <span class="is-underline">
+                「スポGOMI まちの絆づくり編」で検索
+              </span>
+            </p>
+          </div>
+          <h3 class="c-contents-title"><span>見放題サービス</span></h3>
+          <div class="l-streaming-list mb-3">
+            <a href="https://www.amazon.co.jp/channels/animetimesjp/" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">アニメタイムズ</p>
+            </a>
+            <a href="https://video.dmkt-sp.jp/" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">dTV</p>
+            </a>
+            <a href="https://anime.dmkt-sp.jp/animestore/tp_pc" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">dアニメストア</p>
+            </a>
+            <a href="https://site.nicovideo.jp/danime/" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">dアニメストア  ニコニコ支店</p>
+            </a>
+            <a href="https://www.amazon.co.jp/gp/video/storefront/ref=atv_hm_hom_5_c_OJUbTV_4?contentType=subscription&contentId=danime&benefitId=danime" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">dアニメストア for Prime Video</p>
+            </a>
+            <a href="https://abema.tv/video/genre/animation" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">ABEMA</p>
+            </a>
+            <a href="https://video.unext.jp/" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">U-NEXT</p>
+            </a>
+            <a href="https://www.animehodai.jp/" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">アニメ放題</p>
+            </a>
+          </div>
+          <h3 class="c-contents-title"><span>都度課金サービス</span></h3>
+          <div class="l-streaming-list">
+            <a href="https://www.hikaritv.net/entry/lineup/video/option/" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">ひかりTV</p>
+            </a>
+            <a href="https://tv.rakuten.co.jp/genre/animation/" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">Rakuten TV</p>
+            </a>
+            <a href="https://gyao.yahoo.co.jp/ct/anime" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">GYAO!ストア</p>
+            </a>
+            <a href="https://www.dmm.com/digital/videomarket/anime/" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">DMM.COM</p>
+            </a>
+            <a href="https://music-book.jp/video/" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">music.jp</p>
+            </a>
+            <a href="https://www.videomarket.jp/c1-3" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">ビデオマーケット</p>
+            </a>
+            <a href="http://mfplus.jp/" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">MOVIE FULL</p>
+            </a>
+            <a href="https://video.crank-in.net/" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">クランクイン！ビデオ</p>
+            </a>
+            <a href="https://a.happydouga.jp/web/genre.php/anime" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">HAPPY!動画</p>
+            </a>
+            <a href="https://www.telasa.jp/ppv" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">TELASA</p>
+            </a>
+            <a href="https://www.jcom.co.jp/service/tv/ondemand/" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">J:COMオンデマンド</p>
+            </a>
+            <a href="https://front.milplus.jp/top/navi/tvod" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">milplus</p>
+            </a>
+            <a href="https://www.b-ch.com/" target="_blank" class="c-btn is-small l-streaming-list-item">
+              <p class="c-btn-text-small">バンダイチャンネル</p>
+            </a>
+          </div>
+        </section> -->
+
+        <section>
+          <h2 class="c-headline">お問い合わせ</h2>
+          <div class="mb-2">
+            <p class="c-text">
+              <span class="is-underline">
+                スポーツゴミ拾い(通称スポGOMI)は実在する競技です。毎年35を超える地域の高校による「スポGOMI甲子園」や、有名企業がCSR活動の一環として行うなど、競技人口が急増しています。アニメを通じて、スポGOMIの活動の輪を広げていくことを目的としています。<br>
+                本アニメを、環境教育の一環として活用頂ける教育機関には、映像を無償提供しています。下部のフォームからお問い合わせください。
+              </span>
+            </p>
+          </div>
+          <div class="l-button-wrapp">
+            <a href="https://form.jotform.com/220591587814059" target="_blank" class="c-btn is-small l-streaming-list-item" onclick="gtag('event', 'click', {'event_category': 'link','event_label': 'btn-contact','value': '1'});">
+              <p class="c-btn-text-small">お問い合わせ</p>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="l-main-content">
+        <div class="l-footer-logo">
+          <a href="https://uminohi.jp/" target="_blank" onclick="gtag('event', 'click', {'event_category': 'link','event_label': 'logo_zaidan_footer','value': '1'});">
+            <img src="../../images/logo_umipro_vertical.svg" alt="日本財団 海と日本プロジェクト">
+          </a>
+        </div>
+        <p class="c-text-small">この作品は日本財団 海と日本プロジェクトCHANGE FOR THE BLUEの一環で制作されています</p>
+        <p class="c-text-small is-invert"><small>一般社団法人マンガ・アニメ・ゲーム教育創造機構 / MyAnimeList</small></p>
+      </div>
+    </footer>
+
+    <div id="overlay" class="hidden-md hidden-lg"></div>
+  </section>
+
+  <div id="humberger" class="hidden-md hidden-lg">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </div>
+  <div id="drawernav" class="hidden-md hidden-lg">
+    <div class="drawernav-content">
+      <ul>
+        <li class="drawernav-item"><a href="https://spo-gomi-anime.uminohi.jp/part2/#introduction" title="Introduction">Introduction</a></li>
+        <li class="drawernav-item"><a href="https://spo-gomi-anime.uminohi.jp/part2/#characters" title="characters">Characters</a></li>
+        <li class="drawernav-item"><a href="https://spo-gomi-anime.uminohi.jp/part2/#staff" title="product">Cast / Staff</a></li>
+        <!-- <li class="drawernav-item"><a href="https://spo-gomi-anime.uminohi.jp/part2/#streaming" title="theme Song">Streaming</a></li> -->
+      </ul>
+      <div class="l-aside-banner">
+        <a href="/" onclick="gtag('event', 'click', {'event_category': 'link','event_label': 'banner_part1-aside','value': '1'});">
+          <img src="../../images/part2/img_spogomi1.png" alt="スポGOMI ワールドカップ エキシビジョンマッチ編">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="loader-bg js-loader-bg">
+    <div class="loader js-loader">
+      <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="../../js/main.js"></script>
+
+</body>
 </html>
