@@ -146,18 +146,15 @@ $(function() {
             //位置によって個別に処理をしたい場合　
             if (current == 0) {
               $('#top_link_js').addClass('link-current');
-              // 現在地がsection1の場合の処理
             } else if (current == 1) {
               $('#introduction_link_js').addClass('link-current');
-              // 現在地がsection2の場合の処理
             } else if (current == 2) {
-              // 現在地がsection3の場合の処理
               $('#characters_link_js').addClass('link-current');
             } else if (current == 3) {
-              // 現在地がsection4の場合の処理
-              $('#staff_link_js').addClass('link-current');
+              $('#movie_link_js').addClass('link-current');
             } else if (current == 4) {
-            // 現在地がsection5の場合の処理
+              $('#staff_link_js').addClass('link-current');
+            } else if (current == 5) {
               $('#streaming_link_js').addClass('link-current');
             }
 
