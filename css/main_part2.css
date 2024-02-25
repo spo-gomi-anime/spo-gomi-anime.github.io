@@ -136,10 +136,16 @@ a:hover {
    padding: calc(100vw * 40 / 375) calc(100vw * 10 / 375);
  }
 
+ .l-main-content.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+
 @media only screen and (min-width: 769px) {
 
   .l-main-content {
-    max-width: calc(100vw * 1160 / 1366);
+    max-width: calc(100vw * 680 / 1366);
     margin: 0 auto;
     padding: calc(100vw * 72 / 1366) 0;
   }
@@ -159,14 +165,14 @@ a:hover {
   letter-spacing: 0.08em;
 }
 
-.c-headline::after {
+/* .c-headline::after {
   content:"";
   display: block;
   width: 2.9em;
   height: 0.14em;
   margin: 0 auto;
   background: url(../images/part2/border_wave.svg) no-repeat;
-}
+} */
 
 @media only screen and (min-width: 769px) {
   .c-headline {

@@ -85,7 +85,7 @@ a:hover {
 @media only screen and (min-width: 769px) {
 
   .l-main-content {
-    max-width: calc(100vw * 1160 / 1366);
+    max-width: calc(100vw * z / 1366);
     margin: 0 auto;
     padding: calc(100vw * 72 / 1366) 0;
   }
